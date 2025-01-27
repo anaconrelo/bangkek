@@ -1,0 +1,31 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block contents %}
+<body>
+    <div class="row">
+        <div class="col-md-4">
+            <video src="{% static 'video/ficri.mp4' %}" class="video" style="height: 100vh;" id="video1" loop muted autoplay>
+            </video>
+        </div>
+        <div class="col-md-4">
+            <video src="{% static 'video/ficri.mp4' %}" class="video" style="height: 100vh;" id="video1" loop muted autoplay>
+            </video>
+        </div>
+        <div class="col-md-4">
+            <video src="{% static 'video/ficri.mp4' %}" class="video" style="height: 100vh;" id="video1" loop muted autoplay>
+            </video>
+        </div>
+    </div>
+    
+</body>
+<script>
+    var video = document.getElementById("video");
+    const videos = document.querySelectorAll('.video');
+    videos.forEach(video => {
+        video.addEventListener('click',function(){
+            video.muted = false;
+        });
+    });
+</script>
+{% endblock %}
